@@ -10,7 +10,7 @@ function Root() {
         <AppLayout>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route path="/accounts" component={AccountsRoutes} />
+            <Route path="/accounts" component={AccountsRoutes}/>
         </AppLayout>
     );
 }
