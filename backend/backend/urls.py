@@ -2,10 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django_pydenticon.views import image as pydenticon_image
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("instagram.urls")),
+    path('indenticon/image/<path:data>.png', pydenticon_image, name='pydenticon_image'),
     path("accounts/", include("accounts.urls"))
 ]
 

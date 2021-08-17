@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Axios from "axios";
 import {Form, Input, Button, notification} from "antd";
 import {useHistory} from "react-router-dom";
 import {SmileOutlined, FrownOutlined} from "@ant-design/icons"
+import {useAxios, axiosInstance} from "../../api";
 
 export default function Signup(){
     const history = useHistory();
@@ -13,7 +13,7 @@ export default function Signup(){
             const {username, password} = values;
             const data = {username, password};
             try{
-                await Axios.post("http://localhost:8000/accounts/signup/", data);
+                await axiosInstance.post("/accounts/signup/", data);
 
                 notification.open({
                     message: "회원가입 성공",
